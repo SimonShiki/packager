@@ -1,2 +1,2 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2,3],{180:function(n,u){},181:function(n,u){},569:function(n,u,r){"use strict";r.r(u);var c=r(526);r.d(u,"Icns",(function(){return c}));var f=r(5);r.d(u,"Buffer",(function(){return f.Buffer}))}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2,3],{183:function(n,u){},184:function(n,u){},591:function(n,u,r){"use strict";r.r(u);var c=r(548);r.d(u,"Icns",(function(){return c}));var f=r(5);r.d(u,"Buffer",(function(){return f.Buffer}))}}]);
 //# sourceMappingURL=icns.js.map
