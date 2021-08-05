@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1,2],{183:function(n,u,r){"use strict";r.r(u);var c=r(89);r.d(u,"Icns",(function(){return c}));var f=r(29);r.d(u,"Buffer",(function(){return f.Buffer}))},63:function(n,u){},64:function(n,u){}}]);
-//# sourceMappingURL=icns.303656426a586e178e29.js.map
