@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/packager/lib/icns-bundle.js"],"names":[],"mappings":"4FAAA,mH","file":"js/icns.c06a8923df073d6a8d90.js","sourcesContent":["import * as Icns from '@fiahfy/icns';\nimport {Buffer} from 'buffer';\n\nexport {\n  Icns,\n  Buffer\n};\n"],"sourceRoot":""}
