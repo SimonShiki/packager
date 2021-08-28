@@ -1,6 +1,6 @@
 // These will be replaced at build-time by generate-service-worker-plugin.js
-const ASSETS = ["/","checksum.worker.js","downloader.worker.js","assets/default-icon.290e09e569a1cab8e61ba93b0d23863f.png","js/vendors~icns~jszip.faa09448de34f4d4a305.js","js/icns.e487eba4a2ec53ac2889.js","js/jszip.adb1f58076fbe3ba2201.js","js/packager.d2c2bfcb2cd47e0ed9dc.js","js/vendors~icns.2f6b87d320656fdd2841.js","js/vendors~jszip.aea786587ab9cd066968.js","js/vendors~packager.c1ab53c130a2e865ec59.js"];
-const CACHE_NAME = 'p4-8cbc7fd4e1c91b7cda0a3dc2c22b1aa446bc56292d353845f290a1eba533a544';
+const ASSETS = ["/","checksum.worker.js","downloader.worker.js","assets/default-icon.290e09e569a1cab8e61ba93b0d23863f.png","js/vendors~icns~jszip.32af4fcb211f4f5d575c.js","js/icns.99160bc8e868d7772abe.js","js/jszip.8063d2d082fa04495905.js","js/packager.9956b12070e82195fdff.js","js/vendors~icns.8ae8c1b61a5d2cf973c0.js","js/vendors~jszip.4ec4f8740336d39a1983.js","js/vendors~packager.6b63c3c584721951c53c.js"];
+const CACHE_NAME = 'p4-d3ffcce393bf05181b5f24152923d11c574d79a14d4b9df263c143099969e98e';
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
