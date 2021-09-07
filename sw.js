@@ -1,9 +1,13 @@
 // These will be replaced at build-time by generate-service-worker-plugin.js
-const ASSETS = ["/","checksum.worker.js","downloader.worker.js","assets/default-icon.290e09e569a1cab8e61ba93b0d23863f.png","js/vendors~icns~jszip.95f7d9de8f693738fade.js","js/icns.296a040c8d934272f2f2.js","js/jszip.72f699cabcadd741a697.js","js/packager.a3ab22daa5863079c0ad.js","js/vendors~icns.ab28459be6dd254077bc.js","js/vendors~jszip.48e044b43b2aa9c36f60.js","js/vendors~packager.b2155e9073ccf17b4177.js"];
-const CACHE_NAME = 'p4-729a0ed3afbefbf59de248aebcdbf736ef925dd646c83aa7fd1a35746c30433c';
+const ASSETS = ["","js/sha256.52086ae4fb19cece366a.worker.js","js/download-project.3f80c4ae6318b0190e46.worker.js","assets/default-icon.290e09e569a1cab8e61ba93b0d23863f.png","js/vendors~icns~jszip.5eb2f78365755579798f.js","js/icns.e07b1610890b2ebcdc3a.js","js/jszip.50c3dd8a94e2b060c0b3.js","js/packager.3bf5fcf793f0fd11b9da.js","js/packager-options-ui.5016819a90578d30e20e.js"];
+const CACHE_NAME = 'p4-95aa368a13154702eb989e43032f5c8ea724335c4db65f84f5fb51768c73f756';
+const IS_PRODUCTION = 'production' === 'production';
+
+const base = location.pathname.substr(0, location.pathname.indexOf('sw.js'));
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
+  self.skipWaiting();
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS.map(i => i === '' ? '/' : i))));
 });
 
 self.addEventListener('activate', event => {
@@ -16,10 +20,18 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
   if (url.origin !== location.origin) return;
-  event.respondWith(
-    fetch(event.request).catch(() => {
-      url.search = '';
-      return caches.match(new Request(url));
-    })
-  );
+  const relativePathname = url.pathname.substr(base.length);
+  if (IS_PRODUCTION && ASSETS.includes(relativePathname)) {
+    url.search = '';
+    const immutable = !!relativePathname;
+    if (immutable) {
+      event.respondWith(
+        caches.match(new Request(url)).then((res) => res || fetch(event.request))
+      );
+    } else {
+      event.respondWith(
+        fetch(event.request).catch(() => caches.match(new Request(url)))
+      );
+    }
+  }
 });
