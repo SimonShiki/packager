@@ -1,6 +1,6 @@
 // These will be replaced at build-time by generate-service-worker-plugin.js
-const ASSETS = ["","js/sha256.52086ae4fb19cece366a.worker.js","js/download-project.84c8a5c9587020de48cd.worker.js","assets/default-icon.290e09e569a1cab8e61ba93b0d23863f.png","js/vendors~icns~jszip.5eb2f78365755579798f.js","js/icns.e07b1610890b2ebcdc3a.js","js/jszip.50c3dd8a94e2b060c0b3.js","js/packager.af0ce1f3ee3fff25f3ec.js","js/packager-options-ui.bb6ea572f54683c60113.js"];
-const CACHE_NAME = "p4-408fec94e80dcbaa6be12fb2716ac1501ccdf9c2016b9f1ea163e5ae331d4a2f";
+const ASSETS = ["","js/sha256.52086ae4fb19cece366a.worker.js","js/download-project.84c8a5c9587020de48cd.worker.js","assets/default-icon.290e09e569a1cab8e61ba93b0d23863f.png","js/vendors~icns~jszip.5eb2f78365755579798f.js","js/icns.e07b1610890b2ebcdc3a.js","js/jszip.50c3dd8a94e2b060c0b3.js","js/packager.a10572b7437f826c963e.js","js/packager-options-ui.70fbd162205fca315afb.js"];
+const CACHE_NAME = "p4-5ef3620a1275146e1b15aa95aedd2f6b0e33243101c8d3a0aa7e387edbb2c370";
 const IS_PRODUCTION = true;
 
 const base = location.pathname.substr(0, location.pathname.indexOf('sw.js'));
